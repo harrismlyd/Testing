@@ -1,0 +1,10 @@
+<%= form_tag do %>
+  <%= label_tag :long_url_label, "Please enter the url below :" %><br/>
+  <%= text_field_tag :long_url, params[:long_url], :size => 50 %><br/>
+  <%= submit_tag "Generate short url" %>
+<% end %>
+
+<% unless @short_url.blank? %>
+   Short URL <br/>
+   <%= link_to @short_url, @short_url, :target => "_blank" %>
+<% end %>
